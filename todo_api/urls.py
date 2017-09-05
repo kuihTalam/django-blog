@@ -16,12 +16,13 @@ Including another URLconf
 """
 #todo_api/urls.py
 
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
 
 from todo_api.views.test import test_view
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', test_view),
+    # url(r'^$', test_view),
+    url(r'', include('blog.urls')),
 ]
